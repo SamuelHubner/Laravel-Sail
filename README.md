@@ -17,6 +17,7 @@ Composer
 
 4 - Inicie o ambiente de desenvolvimento:
 ``` ./vendor/bin/sail up ou sail up ``` 
+    4.1 - Para usar os comandos sail (sailt start,sail stop e afins) é necessário configurar o alias: ``` alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' ```
 
 5 - Crie o arquivo .env
 ``` cp .env.example .env ```
