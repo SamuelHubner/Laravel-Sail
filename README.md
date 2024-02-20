@@ -18,4 +18,8 @@ Composer
 4 - Inicie o ambiente de desenvolvimento:
 ``` ./vendor/bin/sail up ou sail up ``` 
 
+5 - Crie o arquivo .env
+``` cp .env.example .env ```
 
+6 - Gere uma chave para sua aplicação
+``` php artisan key:generate ```
