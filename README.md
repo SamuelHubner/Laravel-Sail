@@ -24,3 +24,13 @@ Composer
 
 6 - Gere uma chave para sua aplicação
 ``` php artisan key:generate ```
+
+7 - Crie o banco de dados
+``` php artisan migrate ```
+
+8 - Instale as dependencias
+``` npm install ```
+
+9 - Rode o projeto
+``` npm run dev ```
+
