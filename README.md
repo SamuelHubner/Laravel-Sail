@@ -26,7 +26,7 @@ Composer
 ``` php artisan key:generate ```
 
 7 - Crie o banco de dados
-``` php artisan migrate ```
+``` docker exec 'nome_container_laravel' php artisan migrate ```
 
 8 - Instale as dependencias
 ``` npm install ```
