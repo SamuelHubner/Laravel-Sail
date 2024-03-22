@@ -1,0 +1,32 @@
+name: Laravel com Docker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configurar Docker
+        uses: docker/setup-image-actions@v3
+        with:
+          docker-version: 'latest'
+          use-caching: true
+
+      - name: Buildar imagem Docker
+        uses: docker/build-action@v3
+        with:
+          context: .
+          file: Dockerfile
+
+      - name: Executar testes
+        run: |
+          docker-compose up -d
+          docker exec -it laravel-sail-laravel.test-1 php artisan test
