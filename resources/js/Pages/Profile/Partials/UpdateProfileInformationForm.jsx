@@ -1,5 +1,6 @@
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
+import InputSelect from '@/Components/InputSelect';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Link, useForm, usePage } from '@inertiajs/react';
@@ -83,6 +84,23 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                         )}
                     </div>
                 )}
+
+                <div>
+                    <InputLabel htmlFor="group" value="Group" />
+
+                        <InputSelect
+                            id="group"
+                            className="mt-1 block w-full"
+                            value={data.group}
+                            onChange={(e) => setData('group', e.target.value)}
+                            required
+                        >
+                            <option value="comum">Comum</option>
+                            <option value="administrador">Administrador</option>
+                        </InputSelect>
+
+                    <InputError className="mt-2" message={errors.group} />
+                </div>
 
                 <div className="flex items-center gap-4">
                     <PrimaryButton disabled={processing}>Save</PrimaryButton>
